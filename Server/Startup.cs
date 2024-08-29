@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using System.Linq;
 using CarChecker.Server.Data;
 using CarChecker.Server.Models;
+using CarChecker.Server.Services;
 
 namespace CarChecker.Server
 {
@@ -50,6 +51,7 @@ namespace CarChecker.Server
             services.AddRazorPages();
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
+            services.AddScoped<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
