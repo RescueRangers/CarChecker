@@ -6,15 +6,10 @@ using System.Security.Claims;
 
 namespace CarChecker.Server
 {
-    public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<ApplicationUser>
+    public class ApplicationUserClaimsPrincipalFactory(
+        UserManager<ApplicationUser> userManager,
+        IOptions<IdentityOptions> optionsAccessor) : UserClaimsPrincipalFactory<ApplicationUser>(userManager, optionsAccessor)
     {
-        public ApplicationUserClaimsPrincipalFactory(
-            UserManager<ApplicationUser> userManager,
-            IOptions<IdentityOptions> optionsAccessor)
-            : base(userManager, optionsAccessor)
-        {
-        }
-
         protected override async Task<ClaimsIdentity> GenerateClaimsAsync(ApplicationUser user)
         {
             var identity = await base.GenerateClaimsAsync(user);
