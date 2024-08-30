@@ -43,10 +43,10 @@ namespace CarChecker.Server
             }
         }
 
-        static string[] Adjectives = new[] { "Light", "Heavy", "Deep", "Long", "Short", "Substantial", "Slight", "Severe", "Problematic" };
-        static string[] Damages = new[] { "Scratch", "Dent", "Ding", "Break", "Discoloration" };
-        static string[] Relations = new[] { "towards", "behind", "near", "beside", "along" };
-        static string[] Positions = new[] { "Edge", "Side", "Top", "Back", "Front", "Inside", "Outside" };
+        static string[] Adjectives = ["Light", "Heavy", "Deep", "Long", "Short", "Substantial", "Slight", "Severe", "Problematic"];
+        static string[] Damages = ["Scratch", "Dent", "Ding", "Break", "Discoloration"];
+        static string[] Relations = ["towards", "behind", "near", "beside", "along"];
+        static string[] Positions = ["Edge", "Side", "Top", "Back", "Front", "Inside", "Outside"];
 
         private static string GenerateRandomNoteText()
         {
@@ -80,7 +80,7 @@ namespace CarChecker.Server
             result.Append(Random.Next(10));
             result.Append(Random.Next(10));
             result.Append(Random.Next(10));
-            result.Append("-");
+            result.Append('-');
             result.Append((char)Random.Next('A', 'Z' + 1));
             result.Append((char)Random.Next('A', 'Z' + 1));
             result.Append((char)Random.Next('A', 'Z' + 1));
