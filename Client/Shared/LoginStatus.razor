@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-@inject SignOutSessionStateManager SignOutManager
 @inject NavigationManager Navigation
 @inject LocalVehiclesStore LocalVehiclesStore
 @inject IStringLocalizer<App> Localize
@@ -25,8 +24,7 @@
 @code {
     private async Task BeginLogOut()
     {
-        await SignOutManager.SetSignOutState();
+        Navigation.NavigateToLogout("authentication/logout");
         await LocalVehiclesStore.SaveUserAccountAsync(null);
-        Navigation.NavigateTo("authentication/logout");
     }
 }
