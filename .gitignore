@@ -3,5 +3,5 @@ bin/
 obj/
 .vs/
 *.csproj.user
-Server/app.db
+Server/app.db*
 /Server/*.log
