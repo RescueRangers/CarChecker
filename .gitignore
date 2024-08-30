@@ -4,3 +4,4 @@ obj/
 .vs/
 *.csproj.user
 Server/app.db
+/Server/*.log
