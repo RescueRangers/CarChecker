@@ -10,8 +10,7 @@ namespace CarChecker.Server.Services
 {
     public class EmailSender : IEmailSender
     {
-        private IConfiguration _config;
-        private ILogger<EmailSender> _logger;
+        private readonly ILogger<EmailSender> _logger;
         
         private string _userName;
         private string _password;
