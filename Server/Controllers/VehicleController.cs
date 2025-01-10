@@ -13,14 +13,9 @@ namespace CarChecker.Server.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class VehicleController : ControllerBase
+    public class VehicleController(ApplicationDbContext db) : ControllerBase
     {
-        ApplicationDbContext db;
-
-        public VehicleController(ApplicationDbContext db)
-        {
-            this.db = db;
-        }
+        readonly ApplicationDbContext db = db;
 
         public IEnumerable<Vehicle> ChangedVehicles([FromQuery] DateTime since)
         {

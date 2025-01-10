@@ -28,7 +28,7 @@
         <div class="form-field">
             <label>@Localize["Photo:"]</label>
 
-            <InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
+            <BlazorInputFile.InputFile id="image-picker" OnChange="HandlePhotoSelected" accept="image/*" />
 
             <label class="text-button" for="image-picker">
                 <img src="@formData.PhotoUrl" class="vehicle-note-photo" />
